@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>url-to-pdf-example</title>
+  </head>
+  <body>
+    <div class="print-hide">
+      <h2>Print website as pdf</h2>
+      <form>
+        <input id="input" type="text" value="https://google.com"/>
+        <button onclick="generatePdf()" href="/generate-pdf?url=https://google.com">PDF</button>
+      </form>
+    </div>
+  </body>
+  <script>
+    function generatePdf() {
+      var url = "/generate-pdf?url=" + encodeURI(document.getElementById("input").value);
+      window.open(url, '_blank');
+    }
+  </script>
+</html>
